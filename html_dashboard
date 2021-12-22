@@ -1,0 +1,343 @@
+HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Bar Chart by Plotly</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <div id="TN">
+      <img src="/Users/akashd/Downloads/Tamil_Nadu_Emblem1.png" height="100px" width="100px"><br><br>
+      </div>
+    <h4>An initiative to keep Tamil Nadu in pace towards digital India campaign</h6> 
+    <h2>DATA VISUALIZATION DASHBOARD ON ROAD ACCIDENTS & ROAD STATISTICS OF TAMIL NADU</h2>
+    <div id="line-chart-all-year" style="width: 90%;"></div>
+    <script src="/Users/akashd/visual studio/line_plotly.js"></script>
+    <button class="button-year" style="vertical-align:middle"><a href="#heads-07"><span>2007</span></a></button>
+    <button class="button-year" style="vertical-align:middle"><a href="#heads-08"><span>2008</span></a></button>
+    <button class="button-year" style="vertical-align:middle"><a href="#heads-14"><span>2014</span></a></button>
+    <button class="button-year" style="vertical-align:middle"><a href="#heads-19"><span>2019</span></a></button>
+    <div id="heads-07">2007 Road Accidents Visualization of Tamil Nadu</div>
+    <div id="bar-chart-2007" style="width: 90%; "></div>
+    <script src="/Users/akashd/visual studio/bar_plotly.js"></script>
+    <div id="pie-chart-2007" style="width: 90%; height: 700px; "></div>
+    <script src="/Users/akashd/visual studio/pie_plotly.js"></script>
+  
+    <div id="sunburst-chart-2007" style="width: 90%; height: 700px;"></div>
+    <div id="heads-08">2008 Road Accidents Visualization of Tamil Nadu</div>
+    <script src="/Users/akashd/visual studio/sunburst_plotly.js"></script>
+    <div id="bar-chart-2008" style="width: 90%; "></div>
+    <script src="/Users/akashd/visual studio/bar_chart_2008.js"></script>
+    
+    <div id="pie-chart-2008" style="width: 90%; height: 700px;"></div>
+    <script src="/Users/akashd/visual studio/pie_chart_2008.js"></script>
+    <div id="sunburst-chart-2008" style="width: 90%; height: 700px; ;"></div>
+    <script src="/Users/akashd/visual studio/sun_burst 2008.js"></script>
+    
+    <div id="heads-14">2014 Road Accidents Visualization of Tamil Nadu</div>
+    <div id="bar-chart-2014" style="width: 90%; "></div>
+    <script src="/Users/akashd/visual studio/bar_chart_2014.js"></script>
+    
+    <div id="pie-chart-2014" style="width: 90%; height:700px"></div>
+    <script src="/Users/akashd/visual studio/pie_plotly 2014.js"></script>
+    <div id="sunburst-chart-2014" style="width: 90%; ;"></div>
+    <script src="/Users/akashd/visual studio/sunburst 2014.js"></script>
+    
+    <div id="heads-19">2019 Road Accidents Visualization of Tamil Nadu</div>
+    <div id="bar-chart-2019" style="width: 90%; "></div>
+    <script src="/Users/akashd/visual studio/bar_chart 2019.js"></script>
+    
+    <div id="pie-chart-2019" style="width: 90%; height:700px"></div>
+    <script src="/Users/akashd/visual studio/pie_chart 2019.js"></script>
+    <div id="sunburst-chart-2019" style="width: 90%; height: 700px;"></div>
+    <script src="/Users/akashd/visual studio/sunburst 2019.js"></script>
+    <br><br>
+    <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+  </body>
+  <style>
+    body{
+      background-image: linear-gradient(#ff9933, #ffffff, #138808);
+      background-repeat: no-repeat;
+    }
+    h2{
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+      border:black;
+      border-bottom-style:solid;
+      background-color: #ffffff;
+      text-shadow: 1px 1px rgb(100, 100, 100);
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    h4{
+      text-align: center;
+      font-family: 'Lucida Handwriting',cursive,serif;
+    }
+    #TN{
+      text-align: center;
+      background-color: #ffffff;
+      margin-right:650px;
+      margin-left:650px;
+      height: 105px;
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+      animation-name: example;
+      animation-duration: 5s;
+    }
+    @keyframes example {
+  0%   {background-color: red;}
+  25%  {background-color: orange;}
+  50%  {background-color: rgb(10, 226, 10);}
+}
+    #line-chart-all-year
+    {
+      border: 3px solid black;
+      width: 90%;
+      margin-left: 70px;
+      margin-top: 50px;
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+  #bar-chart-2007
+    {
+    
+      border:3px solid black;
+      margin-left: 70px;
+      margin-bottom: 40px;
+      margin-top: 40px;
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #pie-chart-2007
+    {
+      border:3px solid black;
+      margin-left: 70px;
+      margin-bottom: 40px;
+      margin-top: 20px;
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #sunburst-chart-2007
+    {
+      margin: 0px 0px 0px 0px;
+      border:3px solid black;
+      margin-left: 70px;
+      margin-bottom: 60px;
+      margin-top: 10px;
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #bar-chart-2008
+    {
+      margin:25px 5px 5px 5px;
+      border:3px solid black;
+      margin-left: 70px;
+      margin-bottom: 40px; 
+      margin-top:40px;
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #pie-chart-2008
+    {
+      border:3px solid black;
+      margin-left: 70px;
+      margin-bottom: 40px;
+      margin-top: 20px;
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #sunburst-chart-2008
+    {
+      margin: 0px 0px 0px 0px;
+      border:3px solid black;
+      margin-left: 70px;
+      margin-bottom: 60px;
+      margin-top: 10px;
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #bar-chart-2014
+    {
+      margin:5px 0px 5px 5px;
+      border:3px solid black;
+      margin-left: 70px;
+      margin-bottom: 40px; 
+      margin-top: 40px;
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #pie-chart-2014
+    {
+      border:3px solid black;
+      margin-left: 70px;
+      margin-bottom: 40px;
+      margin-top: 20px;
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #sunburst-chart-2014
+    {
+      margin: 0px 0px 0px 0px;
+      border:3px solid black;
+      margin-left: 70px;
+      margin-bottom: 60px;
+      margin-top: 10px;
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #bar-chart-2019
+    {
+      margin:5px 0px 5px 5px;
+      border:3px solid black;
+      margin-left: 70px;
+      margin-bottom: 40px; 
+      margin-top: 40px;
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #pie-chart-2019
+    {
+      border:3px solid black;
+      margin-left: 70px;
+      margin-bottom: 40px;
+      margin-top: 20px;
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #sunburst-chart-2019
+    {
+      margin: 0px 0px 0px 0px;
+      border:3px solid black;
+      margin-left: 70px;
+      margin-top: 10px;
+      box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .button-year{
+  display: inline-block;
+  border-radius: 4px;
+  background-color:rgb(255, 81, 0);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 70px;
+  box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.5), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button-year span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  color:white;
+}
+
+.button-year span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-year:hover span {
+  padding-right: 35px;
+}
+
+.button-year:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#heads-07{
+  background: rgb(0, 187, 0);
+  width: 600px;
+  height: 40px;
+  text-align: center;
+  padding-top: 20px; 
+  color: white;
+  margin: 0px 0px 0px 450px;
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 1px 1.5px grey;
+  box-shadow: 0px 3px 4px 4px rgba(0, 0, 0, 0.5), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 30px 30px 30px 30px;
+  text-shadow: 0.5px 1px grey; 
+}
+#heads-08{
+  background: rgb(0, 187, 0);
+  width: 600px;
+  height: 40px;
+  text-align: center;
+  padding-top: 20px; 
+  color: white;
+  margin: 0px 0px 0px 450px;
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 1px 1.5px grey;
+  box-shadow: 0px 3px 4px 4px rgba(0, 0, 0, 0.5), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 30px 30px 30px 30px;
+  text-shadow: 0.5px 1px grey; 
+}
+#heads-14{
+  background: rgb(0, 187, 0);
+  width: 600px;
+  height: 40px;
+  text-align: center;
+  padding-top: 20px; 
+  color: white;
+  margin: 0px 0px 0px 450px;
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 1px 1.5px grey;
+  box-shadow: 0px 3px 4px 4px rgba(0, 0, 0, 0.5), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 30px 30px 30px 30px;
+  text-shadow: 0.5px 1px grey; 
+}
+#heads-19{
+  background: rgb(0, 187, 0);
+  width: 600px;
+  height: 40px;
+  text-align: center;
+  padding-top: 20px; 
+  color: white;
+  margin: 0px 0px 0px 450px;
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 1px 1.5px grey;
+  box-shadow: 0px 3px 4px 4px rgba(0, 0, 0, 0.5), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 30px 30px 30px 30px;
+  text-shadow: 0.5px 1px grey; 
+}
+#topBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 5px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50px;
+}
+
+#topBtn:hover {
+  background-color: #555;
+}
+  </style>
+  <script>
+    var mybutton = document.getElementById("topBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+</html>
